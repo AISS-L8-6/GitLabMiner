@@ -1,29 +1,10 @@
 
-package aiss.gitlabminer.model.commit;
-
-import java.util.List;
-import javax.annotation.Generated;
+package aiss.gitlabminer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonPropertyOrder({
-    "id",
-    "title",
-    "author_name",
-    "author_email",
-    "authored_date",
-    "committer_name",
-    "committer_email",
-    "committed_date",
-    "message",
-    "web_url"
-})
-@Generated("jsonschema2pojo")
 public class Commit {
 
     @JsonProperty("id")

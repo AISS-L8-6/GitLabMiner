@@ -1,30 +1,12 @@
 
-package aiss.gitlabminer.model.issue;
+package aiss.gitlabminer.model;
 
 import java.util.List;
-import javax.annotation.Generated;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonPropertyOrder({
-    "id",
-    "iid",
-    "title",
-    "description",
-    "state",
-    "created_at",
-    "updated_at",
-    "closed_at",
-    "labels",
-    "upvotes",
-    "downvotes"
-})
-@Generated("jsonschema2pojo")
 public class Issues {
 
     @JsonProperty("id")

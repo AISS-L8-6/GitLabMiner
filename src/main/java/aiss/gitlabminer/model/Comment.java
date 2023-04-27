@@ -1,22 +1,10 @@
 
-package aiss.gitlabminer.model.comment;
-
-import javax.annotation.Generated;
+package aiss.gitlabminer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonPropertyOrder({
-    "id",
-    "body",
-    "created_at",
-    "updated_at",
-})
-@Generated("jsonschema2pojo")
 public class Comment {
 
     @JsonProperty("id")
