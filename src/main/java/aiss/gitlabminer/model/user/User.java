@@ -1,17 +1,19 @@
 
-package aiss.gitlabminer.user;
+package aiss.gitlabminer.model.user;
 
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder({
     "id",
     "username",
     "name",
-    "state",
     "avatar_url",
     "web_url"
 })
@@ -19,25 +21,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class User {
 
     @JsonProperty("id")
-    private Integer id;
+    private String id;
     @JsonProperty("username")
     private String username;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("state")
-    private String state;
     @JsonProperty("avatar_url")
     private String avatarUrl;
     @JsonProperty("web_url")
     private String webUrl;
 
     @JsonProperty("id")
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -59,16 +59,6 @@ public class User {
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
-    }
-
-    @JsonProperty("state")
-    public String getState() {
-        return state;
-    }
-
-    @JsonProperty("state")
-    public void setState(String state) {
-        this.state = state;
     }
 
     @JsonProperty("avatar_url")
@@ -106,10 +96,6 @@ public class User {
         sb.append("name");
         sb.append('=');
         sb.append(((this.name == null)?"<null>":this.name));
-        sb.append(',');
-        sb.append("state");
-        sb.append('=');
-        sb.append(((this.state == null)?"<null>":this.state));
         sb.append(',');
         sb.append("avatarUrl");
         sb.append('=');

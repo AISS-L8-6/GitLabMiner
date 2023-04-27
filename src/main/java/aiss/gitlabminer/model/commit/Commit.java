@@ -1,16 +1,18 @@
 
-package aiss.gitlabminer.commit;
+package aiss.gitlabminer.model.commit;
 
 import java.util.List;
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder({
     "id",
-    "short_id",
     "title",
     "author_name",
     "author_email",
@@ -18,9 +20,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "committer_name",
     "committer_email",
     "committed_date",
-    "created_at",
     "message",
-    "parent_ids",
     "web_url"
 })
 @Generated("jsonschema2pojo")
@@ -28,8 +28,6 @@ public class Commit {
 
     @JsonProperty("id")
     private String id;
-    @JsonProperty("short_id")
-    private String shortId;
     @JsonProperty("title")
     private String title;
     @JsonProperty("author_name")
@@ -44,12 +42,8 @@ public class Commit {
     private String committerEmail;
     @JsonProperty("committed_date")
     private String committedDate;
-    @JsonProperty("created_at")
-    private String createdAt;
     @JsonProperty("message")
     private String message;
-    @JsonProperty("parent_ids")
-    private List<String> parentIds;
     @JsonProperty("web_url")
     private String webUrl;
 
@@ -61,16 +55,6 @@ public class Commit {
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
-    }
-
-    @JsonProperty("short_id")
-    public String getShortId() {
-        return shortId;
-    }
-
-    @JsonProperty("short_id")
-    public void setShortId(String shortId) {
-        this.shortId = shortId;
     }
 
     @JsonProperty("title")
@@ -143,16 +127,6 @@ public class Commit {
         this.committedDate = committedDate;
     }
 
-    @JsonProperty("created_at")
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    @JsonProperty("created_at")
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
     @JsonProperty("message")
     public String getMessage() {
         return message;
@@ -161,16 +135,6 @@ public class Commit {
     @JsonProperty("message")
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    @JsonProperty("parent_ids")
-    public List<String> getParentIds() {
-        return parentIds;
-    }
-
-    @JsonProperty("parent_ids")
-    public void setParentIds(List<String> parentIds) {
-        this.parentIds = parentIds;
     }
 
     @JsonProperty("web_url")
@@ -190,10 +154,6 @@ public class Commit {
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
-        sb.append(',');
-        sb.append("shortId");
-        sb.append('=');
-        sb.append(((this.shortId == null)?"<null>":this.shortId));
         sb.append(',');
         sb.append("title");
         sb.append('=');
@@ -223,17 +183,9 @@ public class Commit {
         sb.append('=');
         sb.append(((this.committedDate == null)?"<null>":this.committedDate));
         sb.append(',');
-        sb.append("createdAt");
-        sb.append('=');
-        sb.append(((this.createdAt == null)?"<null>":this.createdAt));
-        sb.append(',');
         sb.append("message");
         sb.append('=');
         sb.append(((this.message == null)?"<null>":this.message));
-        sb.append(',');
-        sb.append("parentIds");
-        sb.append('=');
-        sb.append(((this.parentIds == null)?"<null>":this.parentIds));
         sb.append(',');
         sb.append("webUrl");
         sb.append('=');

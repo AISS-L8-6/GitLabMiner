@@ -1,35 +1,36 @@
 
-package aiss.gitlabminer.issue;
+package aiss.gitlabminer.model.issue;
 
+import java.util.List;
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder({
     "id",
     "iid",
-    "group_id",
     "title",
     "description",
     "state",
     "created_at",
     "updated_at",
-    "due_date",
-    "start_date",
-    "expired",
-    "web_url"
+    "closed_at",
+    "labels",
+    "upvotes",
+    "downvotes"
 })
 @Generated("jsonschema2pojo")
-public class Milestone {
+public class Issues {
 
     @JsonProperty("id")
-    private Integer id;
-    @JsonProperty("iid")
-    private Integer iid;
-    @JsonProperty("group_id")
-    private Integer groupId;
+    private String id;
+    @JsonProperty("ref_id")
+    private String iid;
     @JsonProperty("title")
     private String title;
     @JsonProperty("description")
@@ -40,43 +41,33 @@ public class Milestone {
     private String createdAt;
     @JsonProperty("updated_at")
     private String updatedAt;
-    @JsonProperty("due_date")
-    private String dueDate;
-    @JsonProperty("start_date")
-    private String startDate;
-    @JsonProperty("expired")
-    private Boolean expired;
-    @JsonProperty("web_url")
-    private String webUrl;
+    @JsonProperty("closed_at")
+    private String closedAt;
+    @JsonProperty("labels")
+    private List<String> labels;
+    @JsonProperty("upvotes")
+    private Integer upvotes;
+    @JsonProperty("downvotes")
+    private Integer downvotes;
 
     @JsonProperty("id")
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
     @JsonProperty("iid")
-    public Integer getIid() {
+    public String getIid() {
         return iid;
     }
 
     @JsonProperty("iid")
-    public void setIid(Integer iid) {
+    public void setIid(String iid) {
         this.iid = iid;
-    }
-
-    @JsonProperty("group_id")
-    public Integer getGroupId() {
-        return groupId;
-    }
-
-    @JsonProperty("group_id")
-    public void setGroupId(Integer groupId) {
-        this.groupId = groupId;
     }
 
     @JsonProperty("title")
@@ -129,50 +120,50 @@ public class Milestone {
         this.updatedAt = updatedAt;
     }
 
-    @JsonProperty("due_date")
-    public String getDueDate() {
-        return dueDate;
+    @JsonProperty("closed_at")
+    public Object getClosedAt() {
+        return closedAt;
     }
 
-    @JsonProperty("due_date")
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
+    @JsonProperty("closed_at")
+    public void setClosedAt(String closedAt) {
+        this.closedAt = closedAt;
     }
 
-    @JsonProperty("start_date")
-    public String getStartDate() {
-        return startDate;
+    @JsonProperty("labels")
+    public List<String> getLabels() {
+        return labels;
     }
 
-    @JsonProperty("start_date")
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
+    @JsonProperty("labels")
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
     }
 
-    @JsonProperty("expired")
-    public Boolean getExpired() {
-        return expired;
+    @JsonProperty("upvotes")
+    public Integer getUpvotes() {
+        return upvotes;
     }
 
-    @JsonProperty("expired")
-    public void setExpired(Boolean expired) {
-        this.expired = expired;
+    @JsonProperty("upvotes")
+    public void setUpvotes(Integer upvotes) {
+        this.upvotes = upvotes;
     }
 
-    @JsonProperty("web_url")
-    public String getWebUrl() {
-        return webUrl;
+    @JsonProperty("downvotes")
+    public Integer getDownvotes() {
+        return downvotes;
     }
 
-    @JsonProperty("web_url")
-    public void setWebUrl(String webUrl) {
-        this.webUrl = webUrl;
+    @JsonProperty("downvotes")
+    public void setDownvotes(Integer downvotes) {
+        this.downvotes = downvotes;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Milestone.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Issues.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));
@@ -180,10 +171,6 @@ public class Milestone {
         sb.append("iid");
         sb.append('=');
         sb.append(((this.iid == null)?"<null>":this.iid));
-        sb.append(',');
-        sb.append("groupId");
-        sb.append('=');
-        sb.append(((this.groupId == null)?"<null>":this.groupId));
         sb.append(',');
         sb.append("title");
         sb.append('=');
@@ -205,21 +192,21 @@ public class Milestone {
         sb.append('=');
         sb.append(((this.updatedAt == null)?"<null>":this.updatedAt));
         sb.append(',');
-        sb.append("dueDate");
+        sb.append("closedAt");
         sb.append('=');
-        sb.append(((this.dueDate == null)?"<null>":this.dueDate));
+        sb.append(((this.closedAt == null)?"<null>":this.closedAt));
         sb.append(',');
-        sb.append("startDate");
+        sb.append("labels");
         sb.append('=');
-        sb.append(((this.startDate == null)?"<null>":this.startDate));
+        sb.append(((this.labels == null)?"<null>":this.labels));
         sb.append(',');
-        sb.append("expired");
+        sb.append("upvotes");
         sb.append('=');
-        sb.append(((this.expired == null)?"<null>":this.expired));
+        sb.append(((this.upvotes == null)?"<null>":this.upvotes));
         sb.append(',');
-        sb.append("webUrl");
+        sb.append("downvotes");
         sb.append('=');
-        sb.append(((this.webUrl == null)?"<null>":this.webUrl));
+        sb.append(((this.downvotes == null)?"<null>":this.downvotes));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
