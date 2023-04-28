@@ -18,13 +18,21 @@ class ProjectServiceTest {
     ProjectService service;
 
     @Test
-    @DisplayName("set all projects")
+    @DisplayName("Get all projects")
     void findAllProjects() {
-//        ResponseEntity<Project[]> projects = service.findAllProjects();
-//        assertTrue(!projects.equals(Project[]), "list of projects is empty");
-//        for(Project p:projects){
-//            System.out.println(p);
-//        }
-//        System.out.println(projects);
+        List<Project> projects = service.findAllProjects();
+        assertTrue(!projects.isEmpty(), "list of projects is empty");
+        for(Project p:projects){
+            System.out.println(p);
+        }
+    }
+
+    @Test
+    @DisplayName("Get project by id")
+    void getProjectById() {
+        String id = "45577899";
+        Project project = service.getProjectById(id);
+        assertTrue(!project.equals(null), "project is empty");
+        System.out.println(project);
     }
 }
