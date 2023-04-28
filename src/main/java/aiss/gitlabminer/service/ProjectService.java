@@ -19,4 +19,5 @@ public class ProjectService {
         Project[] projects = restTemplate.getForObject(uri, Project[].class);
         return Arrays.stream(projects).toList();
     }
+
 }
