@@ -19,8 +19,8 @@ class UserServiceTest {
     @Test
     @DisplayName("Get user by project id")
     void getUsersByProjectId() {
-        String id = "20699";
-        List<User> users = service.getUsersByProjectId(id);
+        String projectId = "20699";
+        List<User> users = service.getUsersByProjectId(projectId);
         assertTrue(!users.isEmpty(), "list of users is empty");
         for(User p:users){
             System.out.println(p);

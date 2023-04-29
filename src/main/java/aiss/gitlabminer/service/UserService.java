@@ -21,9 +21,6 @@ public class UserService {
     @Autowired
     RestTemplate restTemplate;
 
-    // @Value("${githubminer.baseuri}")
-    private String url=  "https://gitlab.com/api/v4";
-
     // @Value("${githubminer.token}")
     private String token = "glpat-kzszo-mUVCguU-yT-BNy";
 
@@ -50,8 +47,9 @@ public class UserService {
             headers.set("Authorization", "Bearer " + token);
         }
         HttpEntity<User> request = new HttpEntity<>(null, headers);
-        ResponseEntity<User> response = restTemplate
-                .exchange(url+"/projects/"+id+"/users", HttpMethod.GET, request, User.class);
+        ResponseEntity<User[]> response = restTemplate
+                .exchange("https://gitlab.com/api/v4/projects/" + id + "/users", HttpMethod.GET, request, User[].class);
+
         List<User> result = new ArrayList<>();
         result.addAll(Arrays.asList(response.getBody()));
 
