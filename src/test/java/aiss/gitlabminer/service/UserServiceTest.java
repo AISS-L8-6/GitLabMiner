@@ -26,4 +26,13 @@ class UserServiceTest {
             System.out.println(p);
         }
     }
+
+    @Test
+    @DisplayName("Get user by id")
+    void getUserById(){
+        String userId = "13356";
+        User user = service.getUserById(userId);
+        assertTrue(!user.equals(null), "user is empty");
+        System.out.println(user);
+    }
 }

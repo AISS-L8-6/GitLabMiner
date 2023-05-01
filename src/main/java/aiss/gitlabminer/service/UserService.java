@@ -24,26 +24,10 @@ public class UserService {
     // @Value("${githubminer.token}")
     private String token = "glpat-kzszo-mUVCguU-yT-BNy";
 
-    /*public List<Project> findAllProjects() throws HttpClientErrorException {
+    public List<User> getUsersByProjectId(String id) throws HttpClientErrorException {
 
         HttpHeaders headers = new HttpHeaders();
-        if(token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<Project[]> request = new HttpEntity<>(null, headers);
-        ResponseEntity<Project[]> response = restTemplate
-                .exchange(url, HttpMethod.GET, request, Project[].class);
-
-        List<Project> result = new ArrayList<>();
-        result.addAll(Arrays.asList(response.getBody()));
-
-        return result;
-    }*/
-
-    public List<User> getUsersByProjectId(String id) throws HttpClientErrorException{
-
-        HttpHeaders headers = new HttpHeaders();
-        if(token != "") {
+        if (token != "") {
             headers.set("Authorization", "Bearer " + token);
         }
         HttpEntity<User> request = new HttpEntity<>(null, headers);
@@ -54,5 +38,21 @@ public class UserService {
         result.addAll(Arrays.asList(response.getBody()));
 
         return result;
+    }
+
+    public User getUserById(String userId) throws HttpClientErrorException {
+
+        HttpHeaders headers = new HttpHeaders();
+        if (token != "") {
+            headers.set("Authorization", "Bearer " + token);
+        }
+        HttpEntity<User> request = new HttpEntity<>(null, headers);
+        ResponseEntity<User> response = restTemplate
+                .exchange("https://gitlab.com/api/v4/users/" + userId, HttpMethod.GET, request, User.class);
+
+        List<User> result = new ArrayList<>();
+        result.addAll(Arrays.asList(response.getBody()));
+        return response.getBody();
+
     }
 }
