@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +26,23 @@ public class IssueService {
     // @Value("${githubminer.token}")
     private final String token = "glpat-kzszo-mUVCguU-yT-BNy";
 
-    public List<Issue> findAllIssue(String projectId) throws HttpClientErrorException {
+    private final LocalDateTime sinceIssue = LocalDateTime.now().minusDays(2);
+    private final String maxPages = "2";
+
+    public List<Issue> findAllIssue(String projectId, Integer sinceIssue, Integer maxPages) throws HttpClientErrorException {
+
+        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/issues";
+
+        if(sinceIssue.equals(null)) {
+            url.concat("?since=" + this.sinceIssue + "&");
+        }else {
+            url.concat("?since=" + LocalDateTime.now().minusDays(sinceIssue) + "&");
+        }
+        if(maxPages.equals(null)) {
+            url.concat("?maxPages=" + this.maxPages);
+        }else {
+            url.concat("?maxPages=" + maxPages);
+        }
 
         HttpHeaders headers = new HttpHeaders();
         if(token != "") {
@@ -33,7 +50,7 @@ public class IssueService {
         }
         HttpEntity<Issue[]> request = new HttpEntity<>(null, headers);
         ResponseEntity<Issue[]> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/projects/" + projectId + "/issues", HttpMethod.GET, request, Issue[].class);
+                .exchange(url, HttpMethod.GET, request, Issue[].class);
 
         List<Issue> result = new ArrayList<>();
         result.addAll(Arrays.asList(response.getBody()));

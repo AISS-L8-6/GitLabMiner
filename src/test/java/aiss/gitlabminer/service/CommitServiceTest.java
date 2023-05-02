@@ -21,7 +21,9 @@ class CommitServiceTest {
     @DisplayName("Get all commits")
     void findAllCommits() {
         String projectId = "45577899";
-        List<Commit> commits = service.findAllCommit(projectId);
+        Integer sinceCommits = 2;
+        Integer maxPages = 2;
+        List<Commit> commits = service.findAllCommit(projectId, sinceCommits, maxPages);
         assertTrue(!commits.isEmpty(), "list of commits is empty");
         for(Commit c:commits){
             System.out.println(c);

@@ -21,7 +21,9 @@ class IssueServiceTest {
     @DisplayName("Get all issue")
     void findAllIssue() {
         String projectId = "278964";
-        List<Issue> issues = service.findAllIssue(projectId);
+        Integer sinceIssue = 2;
+        Integer maxPages = 2;
+        List<Issue> issues = service.findAllIssue(projectId, sinceIssue, maxPages);
         assertTrue(!issues.isEmpty(), "list of issue is empty");
         for(Issue i:issues){
             System.out.println(i);
