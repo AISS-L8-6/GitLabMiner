@@ -25,7 +25,7 @@ public class ProjectService {
 
     // @Value("${githubminer.token}")
     private String token = "glpat-kzszo-mUVCguU-yT-BNy";
-
+/*
     public List<Project> findAllProjects() throws HttpClientErrorException {
 
         HttpHeaders headers = new HttpHeaders();
@@ -41,7 +41,7 @@ public class ProjectService {
 
         return result;
     }
-
+*/
     public Project getProjectById(String id) throws HttpClientErrorException{
 
         HttpHeaders headers = new HttpHeaders();

@@ -1,8 +1,6 @@
 package aiss.gitlabminer.service;
 
-import aiss.gitlabminer.model.Issue;
-import aiss.gitlabminer.model.Project;
-import org.hamcrest.core.Is;
+import aiss.gitlabminer.model.issue.Issue;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

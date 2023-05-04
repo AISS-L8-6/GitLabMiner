@@ -1,7 +1,6 @@
 package aiss.gitlabminer.service;
 
-import aiss.gitlabminer.model.Comment;
-import aiss.gitlabminer.model.Project;
+import aiss.gitlabminer.model.comment.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -39,7 +38,7 @@ public class CommentService {
 
         return result;
     }
-
+/*
     public Comment getCommentById(String projectId, String issueId, String commentId) throws HttpClientErrorException{
 
         HttpHeaders headers = new HttpHeaders();
@@ -51,5 +50,6 @@ public class CommentService {
                 .exchange("https://gitlab.com/api/v4/projects/" + projectId + "/issues/" + issueId + "/notes/" + commentId, HttpMethod.GET, request, Comment.class);
         return response.getBody();
     }
+ */
 }
 

@@ -1,6 +1,6 @@
 package aiss.gitlabminer.service;
 
-import aiss.gitlabminer.model.Issue;
+import aiss.gitlabminer.model.issue.Issue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -57,7 +57,7 @@ public class IssueService {
 
         return result;
     }
-
+/*
     public Issue getIssueById(String issueIid) throws HttpClientErrorException{
 
         HttpHeaders headers = new HttpHeaders();
@@ -95,4 +95,7 @@ public class IssueService {
 
         return result.stream().filter(i -> i.getState().equals(state)).collect(Collectors.toList());
     }
+
+ */
+
 }

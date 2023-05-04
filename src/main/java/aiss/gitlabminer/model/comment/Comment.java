@@ -1,5 +1,5 @@
 
-package aiss.gitlabminer.model;
+package aiss.gitlabminer.model.comment;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,6 +9,8 @@ public class Comment {
 
     @JsonProperty("id")
     private String id;
+    @JsonProperty("author")
+    private Author author;
     @JsonProperty("body")
     private String body;
     @JsonProperty("created_at")
@@ -56,6 +58,13 @@ public class Comment {
         this.updatedAt = updatedAt;
     }
 
+    @JsonProperty("author")
+    public Author getAuthor() { return author; }
+
+    @JsonProperty("author")
+    public void setAuthor(Author author) { this.author = author; }
+
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +85,9 @@ public class Comment {
         sb.append('=');
         sb.append(((this.updatedAt == null)?"<null>":this.updatedAt));
         sb.append(',');
+        sb.append("author");
+        sb.append('=');
+        sb.append(((this.author == null)?"<null>":this.author));
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
         } else {

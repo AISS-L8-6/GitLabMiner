@@ -23,7 +23,7 @@ public class UserService {
 
     // @Value("${githubminer.token}")
     private String token = "glpat-kzszo-mUVCguU-yT-BNy";
-
+   /*
     public List<User> getUsersByProjectId(String id) throws HttpClientErrorException {
 
         HttpHeaders headers = new HttpHeaders();
@@ -55,4 +55,6 @@ public class UserService {
         return response.getBody();
 
     }
+    
+    */
 }

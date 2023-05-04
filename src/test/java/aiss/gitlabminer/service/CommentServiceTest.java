@@ -1,7 +1,6 @@
 package aiss.gitlabminer.service;
 
-import aiss.gitlabminer.model.Comment;
-import aiss.gitlabminer.model.Project;
+import aiss.gitlabminer.model.comment.Comment;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
