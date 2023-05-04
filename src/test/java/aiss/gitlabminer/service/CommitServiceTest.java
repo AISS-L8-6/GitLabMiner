@@ -29,14 +29,4 @@ class CommitServiceTest {
             System.out.println(c);
         }
     }
-
-    @Test
-    @DisplayName("Get commit by id")
-    void getCommitById() {
-        String projectId = "45577899";
-        String commitId = "cbb2a69496cd9ce9d4f33fad42511f4a94e088df";
-        Commit commit = service.getCommitById(projectId, commitId);
-        assertTrue(!commit.equals(null), "commit is empty");
-        System.out.println(commit);
-    }
 }

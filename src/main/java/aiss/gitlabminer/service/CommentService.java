@@ -38,18 +38,6 @@ public class CommentService {
 
         return result;
     }
-/*
-    public Comment getCommentById(String projectId, String issueId, String commentId) throws HttpClientErrorException{
 
-        HttpHeaders headers = new HttpHeaders();
-        if(token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<Comment> request = new HttpEntity<>(null, headers);
-        ResponseEntity<Comment> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/projects/" + projectId + "/issues/" + issueId + "/notes/" + commentId, HttpMethod.GET, request, Comment.class);
-        return response.getBody();
-    }
- */
 }
 

@@ -57,45 +57,5 @@ public class IssueService {
 
         return result;
     }
-/*
-    public Issue getIssueById(String issueIid) throws HttpClientErrorException{
-
-        HttpHeaders headers = new HttpHeaders();
-        if(token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<Issue> request = new HttpEntity<>(null, headers);
-        ResponseEntity<Issue> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/issues/" + issueIid, HttpMethod.GET, request, Issue.class);
-        return response.getBody();
-    }
-
-    public Issue getIssueByIdAndProject(String projectId, String issueId)  throws HttpClientErrorException{
-        HttpHeaders headers = new HttpHeaders();
-        if(token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<Issue> request = new HttpEntity<>(null, headers);
-        ResponseEntity<Issue> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/projects/" + projectId + "/issues/" + issueId, HttpMethod.GET, request, Issue.class);
-        return response.getBody();
-    }
-
-    public List<Issue> getIssueByProjectAndState(String projectId, String state)  throws HttpClientErrorException{
-        HttpHeaders headers = new HttpHeaders();
-        if(token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<Issue[]> request = new HttpEntity<>(null, headers);
-        ResponseEntity<Issue[]> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/projects/" + projectId + "/issues", HttpMethod.GET, request, Issue[].class);
-
-        List<Issue> result = new ArrayList<>();
-        result.addAll(Arrays.asList(response.getBody()));
-
-        return result.stream().filter(i -> i.getState().equals(state)).collect(Collectors.toList());
-    }
-
- */
 
 }

@@ -55,18 +55,4 @@ public class CommitService {
 
         return result;
     }
-/*
-    public Commit getCommitById(String projectId, String commitId) throws HttpClientErrorException{
-
-        HttpHeaders headers = new HttpHeaders();
-        if(token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<Commit> request = new HttpEntity<>(null, headers);
-        ResponseEntity<Commit> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/projects/"+projectId+"/repository/commits/"+commitId, HttpMethod.GET, request, Commit.class);
-        return response.getBody();
-    }
-
- */
 }

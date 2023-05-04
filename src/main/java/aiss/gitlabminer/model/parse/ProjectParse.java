@@ -29,6 +29,10 @@ public class ProjectParse {
         this.issues = issues;
     }
 
+    public ProjectParse() {
+
+    }
+
     public String getId() {
         return id;
     }

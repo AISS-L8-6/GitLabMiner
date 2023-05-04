@@ -25,14 +25,4 @@ class CommentServiceTest {
             System.out.println(c);
         }
     }
-
-    @Test
-    void getCommentById() {
-        String projectId = "278964";
-        String issueId = "409214";
-        String commentId = "1373167959";
-        Comment comment = service.getCommentById(projectId, issueId, commentId);
-        assertTrue(!comment.equals(null), "project is empty");
-        System.out.println(comment);
-    }
 }

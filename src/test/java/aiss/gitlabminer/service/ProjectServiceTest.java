@@ -18,16 +18,6 @@ class ProjectServiceTest {
     ProjectService service;
 
     @Test
-    @DisplayName("Get all projects")
-    void findAllProjects() {
-        List<Project> projects = service.findAllProjects();
-        assertTrue(!projects.isEmpty(), "list of projects is empty");
-        for(Project p:projects){
-            System.out.println(p);
-        }
-    }
-
-    @Test
     @DisplayName("Get project by id")
     void getProjectById() {
         String id = "45577899";

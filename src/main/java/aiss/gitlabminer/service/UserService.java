@@ -21,40 +21,4 @@ public class UserService {
     @Autowired
     RestTemplate restTemplate;
 
-    // @Value("${githubminer.token}")
-    private String token = "glpat-kzszo-mUVCguU-yT-BNy";
-   /*
-    public List<User> getUsersByProjectId(String id) throws HttpClientErrorException {
-
-        HttpHeaders headers = new HttpHeaders();
-        if (token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<User> request = new HttpEntity<>(null, headers);
-        ResponseEntity<User[]> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/projects/" + id + "/users", HttpMethod.GET, request, User[].class);
-
-        List<User> result = new ArrayList<>();
-        result.addAll(Arrays.asList(response.getBody()));
-
-        return result;
-    }
-
-    public User getUserById(String userId) throws HttpClientErrorException {
-
-        HttpHeaders headers = new HttpHeaders();
-        if (token != "") {
-            headers.set("Authorization", "Bearer " + token);
-        }
-        HttpEntity<User> request = new HttpEntity<>(null, headers);
-        ResponseEntity<User> response = restTemplate
-                .exchange("https://gitlab.com/api/v4/users/" + userId, HttpMethod.GET, request, User.class);
-
-        List<User> result = new ArrayList<>();
-        result.addAll(Arrays.asList(response.getBody()));
-        return response.getBody();
-
-    }
-    
-    */
 }
