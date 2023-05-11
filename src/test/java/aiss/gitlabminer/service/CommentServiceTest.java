@@ -17,8 +17,8 @@ class CommentServiceTest {
     @Test
     @DisplayName("Get all comments")
     void findAllComment() {
-        String projectId = "278964";
-        String issueId = "409214";
+        String projectId = "13083";
+        String issueId = "21";
         List<Comment> comments = service.findAllComment(projectId, issueId);
         assertTrue(!comments.isEmpty(), "list of comment is empty");
         for(Comment c:comments){

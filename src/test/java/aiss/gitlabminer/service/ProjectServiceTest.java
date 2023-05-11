@@ -20,7 +20,7 @@ class ProjectServiceTest {
     @Test
     @DisplayName("Get project by id")
     void getProjectById() {
-        String id = "45577899";
+        String id = "13083";
         Project project = service.getProjectById(id);
         assertTrue(!project.equals(null), "project is empty");
         System.out.println(project);

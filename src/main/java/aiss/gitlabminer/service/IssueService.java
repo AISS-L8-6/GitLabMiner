@@ -26,23 +26,9 @@ public class IssueService {
     // @Value("${githubminer.token}")
     private final String token = "glpat-kzszo-mUVCguU-yT-BNy";
 
-    private final LocalDateTime sinceIssue = LocalDateTime.now().minusDays(2);
-    private final String maxPages = "2";
-
     public List<Issue> findAllIssue(String projectId, Integer sinceIssue, Integer maxPages) throws HttpClientErrorException {
 
-        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/issues";
-
-        if(sinceIssue.equals(null)) {
-            url.concat("?since=" + this.sinceIssue + "&");
-        }else {
-            url.concat("?since=" + LocalDateTime.now().minusDays(sinceIssue) + "&");
-        }
-        if(maxPages.equals(null)) {
-            url.concat("?maxPages=" + this.maxPages);
-        }else {
-            url.concat("?maxPages=" + maxPages);
-        }
+        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/issues?since=" + LocalDateTime.now().minusDays(sinceIssue) + "&" + "maxPages=" + maxPages;
 
         HttpHeaders headers = new HttpHeaders();
         if(token != "") {

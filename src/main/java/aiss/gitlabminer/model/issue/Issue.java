@@ -23,7 +23,7 @@ public class Issue {
     @JsonProperty("updated_at")
     private String updatedAt;
     @JsonProperty("closed_at")
-    private String closedAt;
+    private String closed_at;
     @JsonProperty("id")
     private String id;
     @JsonProperty("title")
@@ -102,11 +102,11 @@ public class Issue {
     }
 
     @JsonProperty("closed_at")
-    public String getClosedAt() { return closedAt; }
+    public String getClosedAt() { return closed_at; }
 
     @JsonProperty("closed_at")
     public void setClosedAt(String closedAt) {
-        this.closedAt = closedAt;
+        this.closed_at = closedAt;
     }
 
     @JsonProperty("id")
@@ -215,7 +215,7 @@ public class Issue {
         sb.append(',');
         sb.append("closedAt");
         sb.append('=');
-        sb.append(((this.closedAt == null)?"<null>":this.closedAt));
+        sb.append(((this.closed_at == null)?"<null>":this.closed_at));
         sb.append(',');
         sb.append("id");
         sb.append('=');

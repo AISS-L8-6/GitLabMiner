@@ -9,6 +9,8 @@ public class CommentParse {
     private String created_at;
     private String updated_at;
 
+    public CommentParse(){}
+
     public CommentParse(String id, String body, UserParse author, String created_at, String updated_at) {
         this.id = id;
         this.body = body;

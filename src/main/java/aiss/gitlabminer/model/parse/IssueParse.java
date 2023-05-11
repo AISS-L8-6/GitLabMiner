@@ -12,8 +12,8 @@ public class IssueParse {
     private String description;
     private String state;
     private String createdAt;
-    private String updatedAt;
-    private String closedAt;
+    private String updated_at;
+    private String closed_at;
     private List<String> labels;
     private UserParse author;
     private UserParse assignee;
@@ -29,8 +29,8 @@ public class IssueParse {
         this.description = description;
         this.state = state;
         this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.closedAt = closedAt;
+        this.updated_at = updatedAt;
+        this.closed_at = closedAt;
         this.labels = labels;
         this.author = author;
         this.assignee = assignee;
@@ -47,8 +47,8 @@ public class IssueParse {
         this.description = issue.getDescription();
         this.state = issue.getState();
         this.createdAt = issue.getCreatedAt();
-        this.updatedAt = issue.getUpdatedAt();
-        this.closedAt = issue.getClosedAt();
+        this.updated_at = issue.getUpdatedAt();
+        this.closed_at = issue.getClosedAt();
         this.labels = issue.getLabels();
         this.author = author;
         this.assignee = assignee;
@@ -57,6 +57,8 @@ public class IssueParse {
         this.webUrl = issue.getWeb_url();
         this.comments = comments;
     }
+
+    public IssueParse(){}
 
     public String getId() {
         return id;
@@ -107,19 +109,19 @@ public class IssueParse {
     }
 
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+        this.updated_at = updatedAt;
     }
 
     public String getClosedAt() {
-        return closedAt;
+        return closed_at;
     }
 
     public void setClosedAt(String closedAt) {
-        this.closedAt = closedAt;
+        this.closed_at = closedAt;
     }
 
     public List<String> getLabels() {

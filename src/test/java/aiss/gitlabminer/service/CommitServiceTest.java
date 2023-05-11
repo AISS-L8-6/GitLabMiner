@@ -20,7 +20,7 @@ class CommitServiceTest {
     @Test
     @DisplayName("Get all commits")
     void findAllCommits() {
-        String projectId = "45577899";
+        String projectId = "13083";
         Integer sinceCommits = 2;
         Integer maxPages = 2;
         List<Commit> commits = service.findAllCommit(projectId, sinceCommits, maxPages);

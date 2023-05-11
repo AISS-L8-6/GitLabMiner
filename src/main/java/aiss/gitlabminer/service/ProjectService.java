@@ -37,4 +37,20 @@ public class ProjectService {
                 .exchange(url+"/"+id, HttpMethod.GET, request, Project.class);
         return response.getBody();
     }
+
+    public  List<String> getProjectIds(){
+        HttpHeaders headers = new HttpHeaders();
+        if(token != "") {
+            headers.set("Authorization", "Bearer " + token);
+        }
+        HttpEntity<Project> request = new HttpEntity<>(null, headers);
+        ResponseEntity<Project[]> response = restTemplate
+                .exchange(url, HttpMethod.GET, request, Project[].class);
+        List<String> result = new ArrayList<>();
+        List<Project> aux = Arrays.asList(response.getBody());
+        for(int i = 0; i < aux.size(); i++){
+            result.add(aux.get(i).getId());
+        }
+        return result;
+    }
 }

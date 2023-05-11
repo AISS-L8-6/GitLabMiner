@@ -28,6 +28,8 @@ public class Commit {
     @JsonProperty("web_url")
     private String webUrl;
 
+    public Commit(){}
+
     @JsonProperty("id")
     public String getId() {
         return id;

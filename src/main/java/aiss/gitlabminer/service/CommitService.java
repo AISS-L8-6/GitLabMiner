@@ -24,23 +24,9 @@ public class CommitService {
     // @Value("${githubminer.token}")
     private final String token = "glpat-kzszo-mUVCguU-yT-BNy";
 
-    private final LocalDateTime sinceCommits = LocalDateTime.now().minusDays(2);
-    private final String maxPages = "2";
-
     public List<Commit> findAllCommit(String projectId, Integer sinceCommits, Integer maxPages) throws HttpClientErrorException {
 
-        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/repository/commits";
-
-        if(sinceCommits.equals(null)) {
-            url.concat("?since=" + this.sinceCommits + "&");
-        }else {
-            url.concat("?since=" + LocalDateTime.now().minusDays(sinceCommits) + "&");
-        }
-        if(maxPages.equals(null)) {
-            url.concat("?maxPages=" + this.maxPages);
-        }else {
-            url.concat("?maxPages=" + maxPages);
-        }
+        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/repository/commits?since=" + LocalDateTime.now().minusDays(sinceCommits) + "&" + "maxPages=" + maxPages;
 
         HttpHeaders headers = new HttpHeaders();
         if(token != "") {

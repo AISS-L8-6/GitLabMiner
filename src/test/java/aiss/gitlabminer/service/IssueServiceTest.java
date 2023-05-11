@@ -18,7 +18,7 @@ class IssueServiceTest {
     @Test
     @DisplayName("Get all issue")
     void findAllIssue() {
-        String projectId = "278964";
+        String projectId = "13083";
         Integer sinceIssue = 2;
         Integer maxPages = 2;
         List<Issue> issues = service.findAllIssue(projectId, sinceIssue, maxPages);
