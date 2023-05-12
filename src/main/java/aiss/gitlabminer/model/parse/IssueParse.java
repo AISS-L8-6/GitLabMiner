@@ -7,11 +7,11 @@ import java.util.List;
 public class IssueParse {
 
     private String id;
-    private String refId;
+    private String ref_id;
     private String title;
     private String description;
     private String state;
-    private String createdAt;
+    private String created_at;
     private String updated_at;
     private String closed_at;
     private List<String> labels;
@@ -19,16 +19,15 @@ public class IssueParse {
     private UserParse assignee;
     private Integer upvotes;
     private Integer downvotes;
-    private String webUrl;
     private List<CommentParse> comments;
 
-    public IssueParse(String id, String refId, String title, String description, String state, String createdAt, String updatedAt, String closedAt, List<String> labels, UserParse author, UserParse assignee, Integer upvotes, Integer downvotes, String webUrl, List<CommentParse> comments) {
+    public IssueParse(String id, String ref_id, String title, String description, String state, String created_at, String updatedAt, String closedAt, List<String> labels, UserParse author, UserParse assignee, Integer upvotes, Integer downvotes, String webUrl, List<CommentParse> comments) {
         this.id = id;
-        this.refId = refId;
+        this.ref_id = ref_id;
         this.title = title;
         this.description = description;
         this.state = state;
-        this.createdAt = createdAt;
+        this.created_at = created_at;
         this.updated_at = updatedAt;
         this.closed_at = closedAt;
         this.labels = labels;
@@ -36,17 +35,16 @@ public class IssueParse {
         this.assignee = assignee;
         this.upvotes = upvotes;
         this.downvotes = downvotes;
-        this.webUrl = webUrl;
         this.comments = comments;
     }
 
     public IssueParse(Issue issue, UserParse author, UserParse assignee, List<CommentParse> comments) {
         this.id = issue.getId();
-        this.refId = issue.getIid();
+        this.ref_id = issue.getIid();
         this.title = issue.getTitle();
         this.description = issue.getDescription();
         this.state = issue.getState();
-        this.createdAt = issue.getCreatedAt();
+        this.created_at = issue.getCreatedAt();
         this.updated_at = issue.getUpdatedAt();
         this.closed_at = issue.getClosedAt();
         this.labels = issue.getLabels();
@@ -54,7 +52,6 @@ public class IssueParse {
         this.assignee = assignee;
         this.upvotes = issue.getUpvotes();
         this.downvotes = issue.getDownvotes();
-        this.webUrl = issue.getWeb_url();
         this.comments = comments;
     }
 
@@ -69,11 +66,11 @@ public class IssueParse {
     }
 
     public String getRefId() {
-        return refId;
+        return ref_id;
     }
 
-    public void setRefId(String refId) {
-        this.refId = refId;
+    public void setRefId(String ref_id) {
+        this.ref_id = ref_id;
     }
 
     public String getTitle() {
@@ -101,11 +98,11 @@ public class IssueParse {
     }
 
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(String created_at) {
+        this.created_at = created_at;
     }
 
     public String getUpdatedAt() {
@@ -162,14 +159,6 @@ public class IssueParse {
 
     public void setDownvotes(Integer downvotes) {
         this.downvotes = downvotes;
-    }
-
-    public String getWebUrl() {
-        return webUrl;
-    }
-
-    public void setWebUrl(String webUrl) {
-        this.webUrl = webUrl;
     }
 
     public List<CommentParse> getComments() {

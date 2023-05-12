@@ -58,7 +58,7 @@ public class projectController {
             UserParse author = new UserParse(issueList.get(i).getAuthor());
             UserParse assignee = null;
             if(issueList.get(i).getAssignee() != null){
-                assignee = new UserParse(issueList.get(i).getAssignee());;
+                assignee = new UserParse(issueList.get(i).getAssignee());
             }
             List<Comment> commentList = commentService.findAllComment(id, issueList.get(i).getIid());
             List<CommentParse> commentParses = new ArrayList<>();

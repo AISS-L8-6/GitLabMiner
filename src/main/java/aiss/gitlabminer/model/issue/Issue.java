@@ -17,11 +17,11 @@ public class Issue {
     @JsonProperty("author")
     private Author author;
     @JsonProperty("project_id")
-    private String projectId;
+    private String project_id;
     @JsonProperty("assignee")
     private Assignee__1 assignee;
     @JsonProperty("updated_at")
-    private String updatedAt;
+    private String updated_at;
     @JsonProperty("closed_at")
     private String closed_at;
     @JsonProperty("id")
@@ -29,7 +29,7 @@ public class Issue {
     @JsonProperty("title")
     private String title;
     @JsonProperty("created_at")
-    private String createdAt;
+    private String created_at;
     @JsonProperty("iid")
     private String iid;
     @JsonProperty("labels")
@@ -73,12 +73,12 @@ public class Issue {
 
     @JsonProperty("project_id")
     public String getProjectId() {
-        return projectId;
+        return project_id;
     }
 
     @JsonProperty("project_id")
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
+    public void setProjectId(String project_id) {
+        this.project_id = project_id;
     }
 
     @JsonProperty("assignee")
@@ -93,12 +93,12 @@ public class Issue {
 
     @JsonProperty("updated_at")
     public String getUpdatedAt() {
-        return updatedAt;
+        return updated_at;
     }
 
     @JsonProperty("updated_at")
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdatedAt(String updated_at) {
+        this.updated_at = updated_at;
     }
 
     @JsonProperty("closed_at")
@@ -131,12 +131,12 @@ public class Issue {
 
     @JsonProperty("created_at")
     public String getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     @JsonProperty("created_at")
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(String created_at) {
+        this.created_at = created_at;
     }
 
     @JsonProperty("iid")
@@ -201,19 +201,19 @@ public class Issue {
         sb.append('=');
         sb.append(((this.author == null)?"<null>":this.author));
         sb.append(',');
-        sb.append("projectId");
+        sb.append("project_id");
         sb.append('=');
-        sb.append(((this.projectId == null)?"<null>":this.projectId));
+        sb.append(((this.project_id == null)?"<null>":this.project_id));
         sb.append(',');
         sb.append("assignee");
         sb.append('=');
         sb.append(((this.assignee == null)?"<null>":this.assignee));
         sb.append(',');
-        sb.append("updatedAt");
+        sb.append("updated_at");
         sb.append('=');
-        sb.append(((this.updatedAt == null)?"<null>":this.updatedAt));
+        sb.append(((this.updated_at == null)?"<null>":this.updated_at));
         sb.append(',');
-        sb.append("closedAt");
+        sb.append("closed_at");
         sb.append('=');
         sb.append(((this.closed_at == null)?"<null>":this.closed_at));
         sb.append(',');
@@ -225,9 +225,9 @@ public class Issue {
         sb.append('=');
         sb.append(((this.title == null)?"<null>":this.title));
         sb.append(',');
-        sb.append("createdAt");
+        sb.append("created_at");
         sb.append('=');
-        sb.append(((this.createdAt == null)?"<null>":this.createdAt));
+        sb.append(((this.created_at == null)?"<null>":this.created_at));
         sb.append(',');
         sb.append("iid");
         sb.append('=');
