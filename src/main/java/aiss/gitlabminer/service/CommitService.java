@@ -1,6 +1,8 @@
 package aiss.gitlabminer.service;
 
 import aiss.gitlabminer.model.Commit;
+import aiss.gitlabminer.model.issue.Issue;
+import aiss.gitlabminer.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -38,6 +40,13 @@ public class CommitService {
 
         List<Commit> result = new ArrayList<>();
         result.addAll(Arrays.asList(response.getBody()));
+
+        String nextPageUrl = Utils.getNextPageUrl(response.getHeaders());
+        for(int i = 0; i <= maxPages && nextPageUrl != null; i++){
+            response = restTemplate.exchange(nextPageUrl, HttpMethod.GET, request, Commit[].class);
+            result.addAll(Arrays.asList(response.getBody()));
+            nextPageUrl = Utils.getNextPageUrl(response.getHeaders());
+        }
 
         return result;
     }
