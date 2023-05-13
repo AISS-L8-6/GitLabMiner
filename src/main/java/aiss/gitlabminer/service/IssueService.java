@@ -28,7 +28,7 @@ public class IssueService {
 
     public List<Issue> findAllIssue(String projectId, Integer sinceIssue, Integer maxPages) throws HttpClientErrorException {
 
-        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/issues?since=" + LocalDateTime.now().minusDays(sinceIssue) + "&" + "maxPages=" + maxPages;
+        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/issues?since=" + LocalDateTime.now().minusDays(sinceIssue) + "&" + "page=" + maxPages;
 
         HttpHeaders headers = new HttpHeaders();
         if(token != "") {
