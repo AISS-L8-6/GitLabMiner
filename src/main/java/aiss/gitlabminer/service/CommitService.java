@@ -29,7 +29,7 @@ public class CommitService {
 
     public List<Commit> findAllCommit(String projectId, Integer sinceCommits, Integer maxPages) throws HttpClientErrorException {
 
-        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/repository/commits?since=" + LocalDateTime.now().minusDays(sinceCommits) + "&" + "page=" + maxPages;
+        String url = "https://gitlab.com/api/v4/projects/" + projectId + "/repository/commits?since=" + LocalDateTime.now().minusDays(sinceCommits) + "&" + "page=" + 1;
 
         HttpHeaders headers = new HttpHeaders();
         if(token != "") {

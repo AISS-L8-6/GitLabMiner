@@ -8,12 +8,12 @@ public class Utils {
 
     public static String getNextPageUrl(HttpHeaders headers){
         String nextPageUrl = null;
-        List<String> linkHeader = headers.get("Link");
-        if(headers.get("Link") != null){
-            nextPageUrl = null;
+        if(headers.get("Link") == null){
+            return null;
         }
+        List<String> linkHeader = headers.get("Link");
         if(linkHeader.get(0) == null || linkHeader.get(0).isEmpty()){
-            nextPageUrl = null;
+            return null;
         }
         for(String token: linkHeader.get(0).split(", ")){
             if(token.endsWith("rel=\"next\"")){
