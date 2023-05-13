@@ -2,6 +2,7 @@ package aiss.gitlabminer.service;
 
 import aiss.gitlabminer.model.comment.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -20,8 +21,8 @@ public class CommentService {
     @Autowired
     RestTemplate restTemplate;
 
-    // @Value("${githubminer.token}")
-    private final String token = "glpat-kzszo-mUVCguU-yT-BNy";
+    @Value("${token}")
+    private String token;
 
     public List<Comment> findAllComment(String projectId, String issueId) throws HttpClientErrorException {
 
