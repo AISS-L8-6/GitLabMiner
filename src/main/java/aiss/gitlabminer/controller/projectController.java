@@ -10,6 +10,7 @@ import aiss.gitlabminer.model.parse.ProjectParse;
 import aiss.gitlabminer.model.parse.UserParse;
 import aiss.gitlabminer.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -76,6 +77,7 @@ public class projectController {
     }
 
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/apipath/project/{id}")
     public ProjectParse postById(@PathVariable String id, @RequestParam(name = "sinceCommits", required = false) Integer sinceCommits, @RequestParam(name = "sinceIssues", required = false) Integer sinceIssues, @RequestParam(name = "maxPages", required = false) Integer maxPages) {
         ProjectParse result;
