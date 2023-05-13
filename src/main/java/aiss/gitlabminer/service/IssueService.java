@@ -2,6 +2,7 @@ package aiss.gitlabminer.service;
 
 import aiss.gitlabminer.model.issue.Issue;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,8 +24,8 @@ public class IssueService {
     RestTemplate restTemplate;
 
 
-    // @Value("${githubminer.token}")
-    private final String token = "glpat-kzszo-mUVCguU-yT-BNy";
+    @Value("${token}")
+    private String token;
 
     public List<Issue> findAllIssue(String projectId, Integer sinceIssue, Integer maxPages) throws HttpClientErrorException {
 

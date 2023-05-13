@@ -2,6 +2,7 @@ package aiss.gitlabminer.service;
 
 import aiss.gitlabminer.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,8 +24,8 @@ public class ProjectService {
     // @Value("${githubminer.baseuri}")
     private String url=  "https://gitlab.com/api/v4/projects";
 
-    // @Value("${githubminer.token}")
-    private String token = "glpat-kzszo-mUVCguU-yT-BNy";
+    @Value("${token}")
+    private String token;
 
     public Project getProjectById(String id) throws HttpClientErrorException{
 
