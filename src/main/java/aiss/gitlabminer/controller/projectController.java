@@ -14,14 +14,16 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import io.swagger.v3.oas.annotations.Parameter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Tag(name="GitLab Project", description="GitLab project miner API")
 @RestController
 public class projectController {
 
@@ -51,7 +53,10 @@ public class projectController {
             @ApiResponse(responseCode = "404", description = "Not Found", content = {@Content(schema = @Schema())})
     })
     @GetMapping("/apipath/project/{id}")
-    public ProjectParse getById(@PathVariable String id, @RequestParam(name = "sinceCommits", required = false) Integer sinceCommits, @RequestParam(name = "sinceIssues", required = false) Integer sinceIssues, @RequestParam(name = "maxPages", required = false) Integer maxPages) {
+    public ProjectParse getById(@Parameter(description = "id of the project to be searched") @PathVariable String id,
+                                @RequestParam(name = "sinceCommits", required = false) Integer sinceCommits,
+                                @RequestParam(name = "sinceIssues", required = false) Integer sinceIssues,
+                                @RequestParam(name = "maxPages", required = false) Integer maxPages) {
         ProjectParse result;
         List<IssueParse> issueParses = new ArrayList<>();
         if(sinceCommits == null){
@@ -100,7 +105,10 @@ public class projectController {
     })
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/apipath/project/{id}")
-    public ProjectParse postById(@PathVariable String id, @RequestParam(name = "sinceCommits", required = false) Integer sinceCommits, @RequestParam(name = "sinceIssues", required = false) Integer sinceIssues, @RequestParam(name = "maxPages", required = false) Integer maxPages) {
+    public ProjectParse postById(@Parameter(description = "id of the project to be created") @PathVariable String id,
+                                 @RequestParam(name = "sinceCommits", required = false) Integer sinceCommits,
+                                 @RequestParam(name = "sinceIssues", required = false) Integer sinceIssues,
+                                 @RequestParam(name = "maxPages", required = false) Integer maxPages) {
         ProjectParse result;
         List<IssueParse> issueParses = new ArrayList<>();
         if(sinceCommits == null){
